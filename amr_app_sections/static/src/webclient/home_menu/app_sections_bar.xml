@@ -23,7 +23,7 @@
             </button>
             <t t-set-slot="content">
                 <DropdownItem onSelected="() => this.onReset()">Restore default layout</DropdownItem>
-                <DropdownItem onSelected="() => this.onAbout()">About App Sections</DropdownItem>
+                <DropdownItem onSelected="() => this.onAbout()">About AMR App Sections</DropdownItem>
             </t>
         </Dropdown>
     </div>

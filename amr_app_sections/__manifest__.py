@@ -1,10 +1,10 @@
 # Part of AMR App Sections. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'App Sections',
+    'name': 'AMR App Sections',
     'summary': 'Organize Odoo apps into collapsible sections',
     'description': """
-App Sections
-============
+AMR App Sections
+================
 Organize application tiles on the home menu into custom, collapsible
 sections. Drag and drop apps, rearrange sections, and keep rarely used
 applications out of sight without changing permissions. Each user has

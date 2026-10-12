@@ -1,4 +1,4 @@
-# App Sections
+# AMR App Sections
 
 Organize your Odoo home menu into collapsible sections.
 
@@ -9,7 +9,7 @@ Organize your Odoo home menu into collapsible sections.
 
 ## What it does
 
-The home menu shows every installed app as one long grid. App Sections lets
+The home menu shows every installed app as one long grid. AMR App Sections lets
 each user group those tiles into named, collapsible sections:
 
 - Create any number of sections and rename them at any time.

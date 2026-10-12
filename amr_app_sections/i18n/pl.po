@@ -20,16 +20,16 @@ msgstr ""
 #: model:ir.module.module,description:base.module_amr_app_sections
 msgid ""
 "\n"
-"App Sections\n"
-"============\n"
+"AMR App Sections\n"
+"================\n"
 "Organize application tiles on the home menu into custom, collapsible\n"
 "sections. Drag and drop apps, rearrange sections, and keep rarely used\n"
 "applications out of sight without changing permissions. Each user has\n"
 "their own saved layout.\n"
 msgstr ""
 "\n"
-"App Sections\n"
-"============\n"
+"AMR App Sections\n"
+"================\n"
 "Uporządkuj kafelki aplikacji na ekranie głównym we własne, zwijane\n"
 "sekcje. Przeciągaj aplikacje, zmieniaj kolejność sekcji i chowaj rzadko\n"
 "używane aplikacje bez zmiany uprawnień. Każdy użytkownik ma swój\n"
@@ -56,8 +56,8 @@ msgstr "AMR Systems"
 #. module: amr_app_sections
 #. odoo-javascript
 #: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml:0
-msgid "About App Sections"
-msgstr "Informacje o App Sections"
+msgid "About AMR App Sections"
+msgstr "Informacje o AMR App Sections"
 
 #. module: amr_app_sections
 #. odoo-javascript
@@ -72,8 +72,8 @@ msgstr "Sekcje menu głównego"
 
 #. module: amr_app_sections
 #: model:ir.module.module,shortdesc:base.module_amr_app_sections
-msgid "App Sections"
-msgstr "App Sections"
+msgid "AMR App Sections"
+msgstr "AMR App Sections"
 
 #. module: amr_app_sections
 #. odoo-javascript
