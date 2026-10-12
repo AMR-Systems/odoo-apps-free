@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="amr_app_sections.AppSectionsBar">
+    <div class="o_amr_bar d-flex align-items-center justify-content-end gap-2 mt-3">
+        <input t-if="this.state.adding"
+            t-ref="this.inputRef"
+            type="text"
+            class="o_amr_add_input form-control form-control-sm w-auto"
+            placeholder="Section name"
+            t-att-value="this.state.name"
+            t-on-input="(ev) => this.state.name = ev.target.value"
+            t-on-keydown="this.onInputKeydown"
+            t-on-blur="this.commitAdd"
+        />
+        <button t-else="" type="button" class="o_amr_add_button btn btn-sm btn-light"
+            t-on-click="this.onAddClick">
+            <i class="oi oi-fw" data-icon="add" aria-hidden="true"/> Add section
+        </button>
+        <Dropdown t-if="this.active">
+            <button type="button" class="o_amr_bar_menu btn btn-sm border-0 p-1" aria-label="Layout options">
+                <i class="oi oi-fw" data-icon="more_vert" aria-hidden="true"/>
+            </button>
+            <t t-set-slot="content">
+                <DropdownItem onSelected="() => this.onReset()">Restore default layout</DropdownItem>
+                <DropdownItem onSelected="() => this.onAbout()">About App Sections</DropdownItem>
+            </t>
+        </Dropdown>
+    </div>
+</t>
+
+</templates>

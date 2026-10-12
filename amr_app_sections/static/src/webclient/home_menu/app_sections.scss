@@ -1,0 +1,54 @@
+.o_amr_bar {
+    .o_amr_add_button,
+    .o_amr_bar_menu {
+        color: inherit;
+    }
+}
+
+.o_amr_sections {
+    .o_amr_section_toggle,
+    .o_amr_section_menu {
+        color: inherit;
+
+        &:focus-visible {
+            outline: 2px solid var(--primary, #714b67);
+            outline-offset: 2px;
+        }
+    }
+
+    .o_amr_section_rule {
+        border-top: 1px solid var(--border-color, #dee2e6);
+        opacity: 0.75;
+    }
+
+    // Collapsed sections keep a thin strip so they stay a drop target.
+    .o_amr_section_apps {
+        min-height: 16px;
+    }
+
+    .o_amr_section.o_amr_drop_target .o_amr_section_header {
+        background: rgba(0, 0, 0, 0.06);
+        border-radius: 0.5rem;
+    }
+
+    .o_amr_drop_placeholder {
+        opacity: 0.4;
+    }
+
+    // "Move to section" affordance: hidden until the tile is hovered or
+    // focused, always visible on touch screens.
+    .o_amr_tile_menu {
+        opacity: 0;
+        transition: opacity 0.1s;
+        background: var(--o-view-background-color, #fff);
+    }
+
+    .o_draggable:hover .o_amr_tile_menu,
+    .o_draggable:focus-within .o_amr_tile_menu {
+        opacity: 1;
+    }
+}
+
+body.o_touch_device .o_amr_sections .o_amr_tile_menu {
+    opacity: 1;
+}

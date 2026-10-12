@@ -1,0 +1,234 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amr_app_sections
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-12 17:20+0000\n"
+"PO-Revision-Date: 2026-10-12 17:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amr_app_sections
+#: model:ir.module.module,description:base.module_amr_app_sections
+msgid ""
+"\n"
+"App Sections\n"
+"============\n"
+"Organize application tiles on the home menu into custom, collapsible\n"
+"sections. Drag and drop apps, rearrange sections, and keep rarely used\n"
+"applications out of sight without changing permissions. Each user has\n"
+"their own saved layout.\n"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-python
+#: code:addons/amr_app_sections/models/res_users_settings.py:0
+msgid "A section name cannot be empty."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-python
+#: code:addons/amr_app_sections/models/res_users_settings.py:0
+msgid "A section name is too long."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/about_dialog.xml:0
+msgid "AMR Systems"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml:0
+msgid "About App Sections"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml:0
+msgid "Add section"
+msgstr ""
+
+#. module: amr_app_sections
+#: model:ir.model.fields,field_description:amr_app_sections.field_res_users_settings__amr_app_sections_layout
+msgid "Home Menu Sections"
+msgstr ""
+
+#. module: amr_app_sections
+#: model:ir.module.module,shortdesc:base.module_amr_app_sections
+msgid "App Sections"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.js:0
+msgid "Apps from this section will move to \"%s\"."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.js:0
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.xml:0
+msgid "Delete"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.js:0
+msgid "Delete section"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/about_dialog.xml:0
+msgid "Developed by"
+msgstr ""
+
+#. module: amr_app_sections
+#: model:ir.model.fields,field_description:amr_app_sections.field_res_users_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: amr_app_sections
+#: model:ir.model.fields,field_description:amr_app_sections.field_res_users_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml:0
+msgid "Layout options"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.xml:0
+msgid "Move down"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_tile.xml:0
+msgid "Move to"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_tile.xml:0
+msgid "Move to section"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.xml:0
+msgid "Move up"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.js:0
+msgid "My apps"
+msgstr ""
+
+#. module: amr_app_sections
+#: model:ir.module.module,summary:base.module_amr_app_sections
+msgid "Organize Odoo apps into collapsible sections"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/about_dialog.xml:0
+msgid ""
+"Organize your apps into collapsible sections. Your layout is yours alone: it"
+" changes nothing for other users and does not affect any access rights."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.js:0
+msgid "Other"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.xml:0
+msgid "Rename"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.js:0
+msgid "Restore"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.js:0
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml:0
+msgid "Restore default layout"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml:0
+msgid "Section name"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_section_header.xml:0
+msgid "Section options"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-python
+#: code:addons/amr_app_sections/models/res_users_settings.py:0
+msgid "This apps layout cannot be saved."
+msgstr ""
+
+#. module: amr_app_sections
+#: model:ir.model,name:amr_app_sections.model_res_users_settings
+msgid "User Settings"
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-python
+#: code:addons/amr_app_sections/models/res_users_settings.py:0
+msgid "You have reached the maximum number of sections."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/sections_store.js:0
+msgid "Your app layout could not be reset. Please try again."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/sections_store.js:0
+msgid "Your app layout could not be saved. Your previous layout was kept."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/sections_store.js:0
+msgid ""
+"Your app layout was changed in another tab, so the latest saved layout was "
+"loaded."
+msgstr ""
+
+#. module: amr_app_sections
+#. odoo-javascript
+#: code:addons/amr_app_sections/static/src/webclient/home_menu/app_sections_bar.js:0
+msgid ""
+"Your sections will be removed and your apps will return to the standard "
+"layout."
+msgstr ""

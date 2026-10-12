@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<!--
+    Extends web_enterprise.HomeMenu. The original .o_apps block must stay
+    structurally intact (attribute changes and position="after" only):
+    web_studio.StudioHomeMenu inherits it in primary mode with xpaths that
+    must keep resolving to that first block.
+-->
+<t t-name="amr_app_sections.HomeMenu" t-inherit="web_enterprise.HomeMenu" t-inherit-mode="extension">
+    <xpath expr="//div[hasclass('o_apps')]" position="attributes">
+        <attribute name="t-if">!this.amrActive and this.displayedApps.length</attribute>
+    </xpath>
+    <xpath expr="//div[hasclass('o_apps')]" position="before">
+        <AppSectionsBar t-if="this.amrShowBar" store="this.amrSections"/>
+    </xpath>
+    <xpath expr="//div[hasclass('o_apps')]" position="after">
+        <div t-if="this.amrActive" class="o_amr_sections" role="listbox">
+            <section t-foreach="this.amrSectionsView" t-as="section" t-key="section.id"
+                     class="o_amr_section" t-att-data-section-id="section.id">
+                <AppSectionHeader section="section" store="this.amrSections"
+                    focused="this.state.focusedIndex === section.headerIndex"/>
+                <div class="o_apps o_amr_section_apps row user-select-none mx-0"
+                     t-att-data-section-id="section.id">
+                    <t t-if="!section.collapsed" t-foreach="section.apps" t-as="app" t-key="app.id">
+                        <t t-set="amrGlobalIndex" t-value="section.startIndex + app_index"/>
+                        <t t-call="amr_app_sections.AppTile"/>
+                    </t>
+                </div>
+            </section>
+        </div>
+    </xpath>
+</t>
+
+</templates>

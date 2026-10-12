@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="amr_app_sections.AboutDialog">
+    <Dialog title="'App Sections'" size="'md'" footer="false">
+        <div class="o_amr_about text-center py-3">
+            <p class="mb-2">Organize your apps into collapsible sections. Your layout is yours alone: it changes nothing for other users and does not affect any access rights.</p>
+            <p class="text-muted mb-0">
+                Developed by <a href="https://amrsystems.pl" target="_blank" rel="noopener">AMR Systems</a>
+            </p>
+        </div>
+    </Dialog>
+</t>
+
+</templates>

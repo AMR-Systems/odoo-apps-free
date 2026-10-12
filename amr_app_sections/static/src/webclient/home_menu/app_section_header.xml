@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="amr_app_sections.AppSectionHeader">
+    <div class="o_amr_section_header d-flex align-items-center mt-3 mb-2">
+        <input t-if="this.state.renaming"
+            t-ref="this.inputRef"
+            type="text"
+            class="o_amr_rename_input form-control form-control-sm w-auto"
+            t-att-value="this.state.name"
+            t-on-input="(ev) => this.state.name = ev.target.value"
+            t-on-keydown="this.onInputKeydown"
+            t-on-blur="this.commitRename"
+        />
+        <button t-else="" type="button"
+            t-att-id="'result_app_' + this.props.section.headerIndex"
+            class="o_amr_section_toggle o_menuitem btn d-flex align-items-center gap-2 p-1 border-0"
+            t-att-class="{ o_focused: this.props.focused }"
+            t-att-aria-expanded="this.props.section.collapsed ? 'false' : 'true'"
+            t-on-click="this.onToggle">
+            <i class="oi oi-fw" t-att-data-icon="this.props.section.collapsed ? 'arrow_right' : 'arrow_drop_down'" aria-hidden="true"/>
+            <span class="o_amr_section_name fw-medium" t-out="this.props.section.name"/>
+            <span class="o_amr_section_count text-muted small" t-out="'(' + this.props.section.apps.length + ')'"/>
+        </button>
+        <hr class="o_amr_section_rule flex-grow-1 ms-2 my-0"/>
+        <Dropdown>
+            <button type="button" class="o_amr_section_menu btn btn-sm border-0 p-1 ms-1" aria-label="Section options">
+                <i class="oi oi-fw" data-icon="more_vert" aria-hidden="true"/>
+            </button>
+            <t t-set-slot="content">
+                <DropdownItem onSelected="() => this.onRename()">Rename</DropdownItem>
+                <DropdownItem onSelected="() => this.onMoveUp()">Move up</DropdownItem>
+                <DropdownItem onSelected="() => this.onMoveDown()">Move down</DropdownItem>
+                <DropdownItem t-if="!this.props.section.isDefault" onSelected="() => this.onDelete()">Delete</DropdownItem>
+            </t>
+        </Dropdown>
+    </div>
+</t>
+
+</templates>
