@@ -19,15 +19,28 @@ their own saved layout.
     'images': ['static/description/cover.png'],
     'depends': ['web_enterprise'],
     'data': [],
+    # No glob wildcards here: base_import_module (zip install / Odoo.sh)
+    # rejects manifests whose asset paths contain * or **.
     'assets': {
         'web.assets_backend': [
-            'amr_app_sections/static/src/**/*',
+            'amr_app_sections/static/src/core/sections_layout.js',
+            'amr_app_sections/static/src/webclient/home_menu/about_dialog.js',
+            'amr_app_sections/static/src/webclient/home_menu/about_dialog.xml',
+            'amr_app_sections/static/src/webclient/home_menu/app_section_header.js',
+            'amr_app_sections/static/src/webclient/home_menu/app_section_header.xml',
+            'amr_app_sections/static/src/webclient/home_menu/app_sections.scss',
+            'amr_app_sections/static/src/webclient/home_menu/app_sections_bar.js',
+            'amr_app_sections/static/src/webclient/home_menu/app_sections_bar.xml',
+            'amr_app_sections/static/src/webclient/home_menu/app_tile.xml',
+            'amr_app_sections/static/src/webclient/home_menu/home_menu_patch.js',
+            'amr_app_sections/static/src/webclient/home_menu/home_menu_patch.xml',
+            'amr_app_sections/static/src/webclient/home_menu/sections_store.js',
         ],
         'web.assets_unit_tests': [
-            'amr_app_sections/static/tests/**/*.test.js',
+            'amr_app_sections/static/tests/app_sections.test.js',
         ],
         'web.assets_tests': [
-            'amr_app_sections/static/tests/tours/**/*.js',
+            'amr_app_sections/static/tests/tours/app_sections_tour.js',
         ],
     },
     'installable': True,
