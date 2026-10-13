@@ -12,13 +12,13 @@ class AppSectionsCommon(TransactionCase):
                 'name': 'Sections User A',
                 'login': 'amr_sections_user_a',
                 'email': 'sections.a@example.com',
-                'group_ids': [(4, cls.env.ref('base.group_user').id)],
+                'groups_id': [(4, cls.env.ref('base.group_user').id)],
             },
             {
                 'name': 'Sections User B',
                 'login': 'amr_sections_user_b',
                 'email': 'sections.b@example.com',
-                'group_ids': [(4, cls.env.ref('base.group_user').id)],
+                'groups_id': [(4, cls.env.ref('base.group_user').id)],
             },
         ])
         Settings = cls.env['res.users.settings']

@@ -13,7 +13,7 @@ their own saved layout.
     'author': 'AMR Systems',
     'website': 'https://amrsystems.pl',
     'category': 'Productivity',
-    'version': '19.0.1.0.0',
+    'version': '18.0.1.0.0',
     'license': 'LGPL-3',
     # First entry = the store cover image
     'images': ['static/description/cover.png'],
