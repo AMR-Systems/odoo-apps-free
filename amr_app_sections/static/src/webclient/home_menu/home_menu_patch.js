@@ -1,4 +1,5 @@
 // Part of AMR App Sections. See LICENSE file for full copyright and licensing details.
+import { useState } from "@odoo/owl";
 import { patch } from "@web/core/utils/patch";
 import { useService } from "@web/core/utils/hooks";
 import { useSortable } from "@web/core/utils/sortable_owl";
@@ -31,11 +32,17 @@ patch(HomeMenu.prototype, {
         const orm = useService("orm");
         const notification = useService("notification");
         super.setup();
-        this.amrSections = new SectionsStore({
-            orm,
-            notification,
-            getApps: () => this.props.apps,
-        });
+        // useState: in Owl 2 subscription is explicit. Reading through this
+        // proxy (directly or via the store's getters) re-renders HomeMenu,
+        // and the store prop handed to children is a reactive target, so
+        // Owl subscribes them automatically.
+        this.amrSections = useState(
+            new SectionsStore({
+                orm,
+                notification,
+                getApps: () => this.props.apps,
+            }),
+        );
         // Tiles: drag within and between sections (the stock sortable is
         // disabled whenever amrActive, so these never run together).
         useSortable({
@@ -73,7 +80,7 @@ patch(HomeMenu.prototype, {
     },
 
     _amrClearDropTargets() {
-        for (const el of this.rootRef()?.querySelectorAll(".o_amr_drop_target") || []) {
+        for (const el of this.rootRef.el?.querySelectorAll(".o_amr_drop_target") || []) {
             el.classList.remove("o_amr_drop_target");
         }
     },

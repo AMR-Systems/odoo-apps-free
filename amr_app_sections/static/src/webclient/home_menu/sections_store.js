@@ -1,5 +1,5 @@
 // Part of AMR App Sections. See LICENSE file for full copyright and licensing details.
-import { proxy } from "@odoo/owl";
+import { markRaw } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import {
@@ -10,6 +10,13 @@ import {
 
 const SETTINGS_FIELD = "amr_app_sections_layout";
 const MODEL = "res.users.settings";
+
+// Last layout the server accepted, kept across HomeMenu remounts. The home
+// menu is recreated every time it opens; without this the store would fall
+// back to the session copy, whose revision goes stale on Odoo versions
+// where user.updateUserSettings does not exist (18), turning every later
+// save into a false conflict.
+let lastKnownLayout;
 
 /**
  * Holds the user's working copy of the layout and persists every change.
@@ -22,11 +29,17 @@ const MODEL = "res.users.settings";
  */
 export class SectionsStore {
     constructor({ orm, notification, getApps }) {
-        this.orm = orm;
-        this.notification = notification;
+        // The store instance is wrapped with useState by the HomeMenu patch
+        // (Owl 2 reactivity is explicit); services must stay unproxied.
+        this.orm = markRaw(orm);
+        this.notification = markRaw(notification);
         this.getApps = getApps;
-        const initial = user.settings?.[SETTINGS_FIELD] || null;
-        this.state = proxy({ layout: initial });
+        const initial =
+            lastKnownLayout !== undefined
+                ? lastKnownLayout
+                : user.settings?.[SETTINGS_FIELD] || null;
+        lastKnownLayout = initial;
+        this.state = { layout: initial };
         this._lastSaved = initial;
         this._saving = false;
         this._queued = false;
@@ -75,7 +88,8 @@ export class SectionsStore {
         }
         this.state.layout = null;
         this._lastSaved = null;
-        user.updateUserSettings(SETTINGS_FIELD, false);
+        lastKnownLayout = null;
+        user.updateUserSettings?.(SETTINGS_FIELD, false);
     }
 
     async _save() {
@@ -107,7 +121,8 @@ export class SectionsStore {
                     this.state.layout = result.layout;
                 }
             }
-            user.updateUserSettings(SETTINGS_FIELD, this._lastSaved);
+            lastKnownLayout = this._lastSaved;
+            user.updateUserSettings?.(SETTINGS_FIELD, this._lastSaved);
         } catch (error) {
             this.state.layout = this._lastSaved;
             this._queued = false;

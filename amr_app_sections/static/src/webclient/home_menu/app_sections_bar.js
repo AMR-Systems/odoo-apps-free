@@ -1,5 +1,5 @@
 // Part of AMR App Sections. See LICENSE file for full copyright and licensing details.
-import { Component, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, useEffect, useRef, useState } from "@odoo/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -11,19 +11,18 @@ import { AboutDialog } from "./about_dialog";
 export class AppSectionsBar extends Component {
     static template = "amr_app_sections.AppSectionsBar";
     static components = { Dropdown, DropdownItem };
-
-    props = useProps({
-        store: t.object(),
-    });
+    static props = {
+        store: Object,
+    };
 
     setup() {
         this.dialog = useService("dialog");
-        this.state = proxy({ adding: false, name: "" });
-        this.inputRef = signal.ref();
+        this.state = useState({ adding: false, name: "" });
+        this.inputRef = useRef("input");
         useEffect(
             () => {
                 if (this.state.adding) {
-                    this.inputRef()?.focus();
+                    this.inputRef.el?.focus();
                 }
             },
             () => [this.state.adding],

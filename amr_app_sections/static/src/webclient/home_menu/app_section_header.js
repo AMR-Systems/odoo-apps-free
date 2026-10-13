@@ -1,5 +1,5 @@
 // Part of AMR App Sections. See LICENSE file for full copyright and licensing details.
-import { Component, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, useEffect, useRef, useState } from "@odoo/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -15,22 +15,21 @@ import {
 export class AppSectionHeader extends Component {
     static template = "amr_app_sections.AppSectionHeader";
     static components = { Dropdown, DropdownItem };
-
-    props = useProps({
-        section: t.object(),
-        store: t.object(),
-        focused: t.boolean().optional(),
-    });
+    static props = {
+        section: Object,
+        store: Object,
+        focused: { type: Boolean, optional: true },
+    };
 
     setup() {
         this.dialog = useService("dialog");
-        this.state = proxy({ renaming: false, name: "" });
-        this.inputRef = signal.ref();
+        this.state = useState({ renaming: false, name: "" });
+        this.inputRef = useRef("input");
         useEffect(
             () => {
                 if (this.state.renaming) {
-                    this.inputRef()?.focus();
-                    this.inputRef()?.select();
+                    this.inputRef.el?.focus();
+                    this.inputRef.el?.select();
                 }
             },
             () => [this.state.renaming],

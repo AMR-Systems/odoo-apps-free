@@ -14,7 +14,12 @@
     <xpath expr="//div[hasclass('o_apps')]" position="before">
         <AppSectionsBar t-if="this.amrShowBar" store="this.amrSections"/>
     </xpath>
-    <xpath expr="//div[hasclass('o_apps')]" position="after">
+    <!--
+        Anchored after .o_no_result, NOT after .o_apps: .o_no_result is a
+        t-elif chained to .o_apps' t-if, and inserting between them would
+        re-chain the t-elif onto our block.
+    -->
+    <xpath expr="//div[hasclass('o_no_result')]" position="after">
         <div t-if="this.amrActive" class="o_amr_sections" role="listbox">
             <section t-foreach="this.amrSectionsView" t-as="section" t-key="section.id"
                      class="o_amr_section" t-att-data-section-id="section.id">
